@@ -37,8 +37,19 @@ class HashTable {
     }
 }
 
-const myHashTable = new HashTable(50);
-myHashTable.set('grapes', 10000);
-console.log(myHashTable.get('grapes'));
-myHashTable.set('apples', 123654);
-console.log(myHashTable.get('apples'));
+function firstRecurringCharacter(array) {
+    const tmp = {};
+
+    for(let i = 0; i < array.length; i++) {
+        if (tmp[array[i]]) {
+            return array[i];
+        }
+
+        tmp[array[i]] = true;
+    }
+
+    return null;
+}
+
+var test_arr = [1, 2, 3, 2, 6, 5];
+console.log(firstRecurringCharacter(test_arr));
